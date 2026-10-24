@@ -7,33 +7,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 24
- 
-    - name: List files
-      run: ls -la
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Show current directory
-      run: pwd
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
-    - name: Check HTML file exists
-      run: test -f index.html
+      - name: List files
+        run: ls -la
 
-    - name: Check CSS file exists
-      run: test -f style.css
+      - name: Show current directory
+        run: pwd
 
-    - name: Check JS file exists
-      run: test -f script.js
+      - name: Check HTML file exists
+        run: test -f index.html
 
-    - name: Validate HTML has heading
-      run: grep -q "<h1>" index.html
+      - name: Check CSS file exists
+        run: test -f style.css
 
-    - name: Completion message
-      run: echo "CI workflow completed successfully"
+      - name: Check JS file exists
+        run: test -f script.js
+
+      - name: Validate HTML has heading
+        run: grep -q "<h1>" index.html
+
+      - name: Completion message
+        run: echo "CI workflow completed successfully"
